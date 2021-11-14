@@ -1,13 +1,17 @@
 import Head from 'next/head'
 import { FormEvent, useState } from 'react'
 
+import { useAuth } from '../contexts/AuthContext'
+
 import styles from '../styles/home.module.scss'
 
 export default function Home() {
+  const { signIn } = useAuth()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  function handleSubmit(event: FormEvent) {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault()
 
     const data = {
@@ -15,7 +19,7 @@ export default function Home() {
       password
     }
 
-    console.log(data)
+    await signIn(data)
   }
 
   return (
@@ -25,22 +29,20 @@ export default function Home() {
       </Head>
 
       <form onSubmit={handleSubmit} className={styles.container}>
-        <input 
+        <input
           type="email"
           placeholder="Email"
-          value={email} 
-          onChange={e => setEmail(e.target.value)} 
+          value={email}
+          onChange={e => setEmail(e.target.value)}
         />
-        <input 
-          type="password" 
+        <input
+          type="password"
           placeholder="Senha"
-          value={password} 
-          onChange={e => setPassword(e.target.value)} 
+          value={password}
+          onChange={e => setPassword(e.target.value)}
         />
 
-        <button type="submit">
-          Entrar
-        </button>
+        <button type="submit">Entrar</button>
       </form>
     </>
   )
