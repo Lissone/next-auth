@@ -1,6 +1,6 @@
 {
-  "name": "next-style-guide",
-  "version": "0.1.0",
+  "name": "next-authentication",
+  "version": "1.0.0",
   "description": "My application description",
   "author": "Leonardo Dias Lissone <leonardo.lissonez@gmail.com>",
   "private": true,

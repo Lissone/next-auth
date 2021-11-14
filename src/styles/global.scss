@@ -5,7 +5,7 @@
 }
 
 :root {
-  --background: #494949;
+  --dark: #494949;
   --light: #f8f9fa;
 }
 
@@ -28,12 +28,12 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--dark);
 }
 
 body, input, textarea, button {
   font: 500 1rem Inter, sans-serif;
-  color: var(--light);
+  color: var(--dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
