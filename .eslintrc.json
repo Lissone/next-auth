@@ -33,7 +33,9 @@
 	],
 	"rules": {
     "react/require-default-props": 0,
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", {
+      "printWidth": 600
+    }],
 		"semi": [2, "never"],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": "off",

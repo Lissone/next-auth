@@ -1,10 +1,4 @@
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import Router from 'next/router'
 import { setCookie, parseCookies } from 'nookies'
 
@@ -49,7 +43,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     if (token) {
       api.get<User>('/me').then(response => {
-        setUser(response.data)
+        const { email, permissions, roles } = response.data
+
+        setUser({ email, permissions, roles })
       })
     }
   }, [])
