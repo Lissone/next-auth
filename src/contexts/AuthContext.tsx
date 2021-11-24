@@ -59,7 +59,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const { permissions, roles, token, refreshToken } = response.data
 
-      api.defaults.headers['Authorization'] = `Bearer + ${token}`
+      api.defaults.headers['Authorization'] = `Bearer ${token}`
 
       setCookie(undefined, '@nextauth.token', token, {
         maxAge: 60 * 60 * 24 * 30, // 30 days
