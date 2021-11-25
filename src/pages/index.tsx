@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { GetServerSideProps } from 'next'
 import { FormEvent, useState } from 'react'
-import { parseCookies } from 'nookies'
 
 import { useAuth } from '../contexts/AuthContext'
+
+import { withSSRGuest } from '../utils/withSSRGuest'
 
 import styles from '../styles/home.module.scss'
 
@@ -50,19 +50,6 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  const cookies = parseCookies(ctx)
-
-  if (cookies['@nextauth.token']) {
-    return {
-      redirect: {
-        destination: '/dashboard',
-        permanent: false
-      }
-    }
-  }
-
-  return {
-    props: {}
-  }
-}
+export const getServerSideProps = withSSRGuest(async ctx => ({
+  props: {}
+}))

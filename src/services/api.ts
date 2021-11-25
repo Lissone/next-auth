@@ -40,15 +40,10 @@ api.interceptors.response.use(
                 path: '/'
               })
 
-              setCookie(
-                undefined,
-                '@nextauth.refreshToken',
-                response.data.refreshToken,
-                {
-                  maxAge: 60 * 60 * 24 * 30, // 30 days
-                  path: '/'
-                }
-              )
+              setCookie(undefined, '@nextauth.refreshToken', response.data.refreshToken, {
+                maxAge: 60 * 60 * 24 * 30, // 30 days
+                path: '/'
+              })
 
               api.defaults.headers['Authorization'] = `Bearer ${token}`
 
