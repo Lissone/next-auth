@@ -4,6 +4,8 @@ import { api } from '../services/api'
 
 import { useAuth } from '../contexts/AuthContext'
 
+import { withSSRAuth } from '../utils/withSSRAuth'
+
 export default function Dashboard() {
   const { user } = useAuth()
 
@@ -20,3 +22,7 @@ export default function Dashboard() {
     </div>
   )
 }
+
+export const getServerSideProps = withSSRAuth(async ctx => ({
+  props: {}
+}))
