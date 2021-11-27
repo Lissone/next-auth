@@ -1,7 +1,7 @@
 {
   "name": "next-auth",
   "version": "1.0.0",
-  "description": "Simple jwt authentication application with refresh token",
+  "description": "Simple jwt authentication application with refresh token.",
   "repository": "https://github.com/Lissone/next-auth.git",
   "author": "Leonardo Dias Lissone Santomero <leonardo.lissonez@gmail.com>",
   "license": "MIT",
