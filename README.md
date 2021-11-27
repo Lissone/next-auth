@@ -78,6 +78,7 @@ npm install
 ```
 
 Run api:
+
 ```bash
 cd .\packages\api\
 yarn dev
@@ -86,11 +87,21 @@ npm run dev
 ```
 
 Run web:
+
 ```bash
 cd .\packages\web\
 yarn dev
 #or
 npm run dev
+```
+
+Default user to login:
+
+```js
+const user = {
+  email: 'lissone@gmail.com',
+  password: '123456'
+}
 ```
 
 ## License
